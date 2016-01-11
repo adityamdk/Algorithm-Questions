@@ -67,19 +67,32 @@ class Node
            ArrayList<Integer> pathNode1,pathNode2;
            pathNode1 = new ArrayList<>();
             pathNode2 = new ArrayList<>();
-           // Node v1 = new Node(node1);
-            //Node v2 = new Node(node2);
-           if((!findPath(root,node1,pathNode1))||(!findPath(root,node1,pathNode2)))
-            {
-                     return -1;  
+            
+         
+           if((!findPath(root,node1,pathNode1))||(!findPath(root,node2,pathNode2)))
+            { 
+                return -1;  
             }
+         
+              System.out.print("pathNode1:"+pathNode1);
+          
+               System.out.print("pathNode2:"+pathNode2);
+          
+           
+           
+           
            Iterator IT1 =pathNode1.iterator();
            Iterator IT2 =pathNode2.iterator();
            while(IT1.hasNext()&&IT2.hasNext())
            {
                Integer element1 = (Integer) IT1.next();
                Integer element2 = (Integer) IT2.next();
-               if((int)element1 ==(int)element2)return element1;
+               
+               
+               if(pathNode2.contains(element1))
+                   return element1;
+               
+            
            }    
            
            return -1;
@@ -115,20 +128,19 @@ public class Tree {
           
         
             ArrayList<Integer> pathed = new ArrayList();
-            root.findPath(root,10,pathed);
+            root.findPath(root,29,pathed);
 	    Collections.reverse(pathed);
 	    System.out.println(" Path in the tree to the node  to 10 is" + pathed);
-            
-            int LCA = root.findLCA(root,8,3);
-            System.out.println("The LCA of 8 and 3 is"+LCA);
-            
-            
+                
             //Finding the LCA now 
+            int LCA = root.findLCA(root,8,52);
+            System.out.println("The LCA of 8 and 52 is"+LCA);
+            
+        
             
           
     }
     
 }
-
 
 
