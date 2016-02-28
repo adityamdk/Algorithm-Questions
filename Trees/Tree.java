@@ -30,7 +30,6 @@ class Node
     
     public void printTreeInorder(Node root)
     {
-        //System.out.println("Inorder tree traversal");
         if(root == null)return;
         printTreeInorder(root.left);
         System.out.print(root.data+" ");
@@ -39,7 +38,6 @@ class Node
     
     public void printTreePostorder(Node root)
     {
-       // System.out.println("PostOrder tree traversal");
         if(root == null)return;
         printTreePostorder(root.left);
         printTreePostorder(root.right);
@@ -48,12 +46,10 @@ class Node
     
     public void printTreePreorder(Node root)
     {
-       // System.out.println("PreOrder tree traversal");
-         if(root == null)return;
+        if(root == null)return;
         System.out.print(root.data+" ");
         printTreePreorder(root.left);
         printTreePreorder(root.right);
-        
     }
     
    	public Boolean findPath(Node root, int find,ArrayList<Integer> path){
@@ -87,12 +83,11 @@ class Node
            
            Iterator IT1 =pathNode1.iterator();
            Iterator IT2 =pathNode2.iterator();
-           while(IT1.hasNext()&&IT2.hasNext())
+           //while(IT1.hasNext()&&IT2.hasNext())
+           while(IT1.hasNext())
            {
                Integer element1 = (Integer) IT1.next();
-               Integer element2 = (Integer) IT2.next();
-               
-               
+              // Integer element2 = (Integer) IT2.next();
                if(pathNode2.contains(element1))
                    return element1;
                
