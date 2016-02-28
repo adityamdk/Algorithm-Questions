@@ -15,7 +15,7 @@ class Node
 
 public class IsBST {
 
-    static boolean isBinaryST(Node root,int max,int min)
+    static boolean isBinaryST(Node root,int min,int max)
     {
         if(root ==null)
             return true;
@@ -24,7 +24,7 @@ public class IsBST {
         {
             return false;
         }
-        return (isBinaryST(root.left,root.data-1,min)&& isBinaryST(root.right,root.data+1,max));
+        return (isBinaryST(root.left,min,root.data-1)&& isBinaryST(root.right,root.data+1,max));
     }
     
     public static void main(String[] args) {
