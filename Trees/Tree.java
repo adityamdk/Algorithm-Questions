@@ -1,5 +1,9 @@
 /*
- Tree program to construct tree,inorder,preorder,postOrder traversals,Finding path of a node from root node and finding,Lowest Common Ancestor of two nodes
+ Tree program to 
+ a)construct tree
+ b) inorder,preorder,postOrder traversals
+ c)Finding path of a node from root node and finding
+ d)Lowest Common Ancestor of two nodes
  */
 package tree;
 
