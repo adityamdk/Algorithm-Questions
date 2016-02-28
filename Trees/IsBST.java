@@ -1,4 +1,4 @@
-//Program to check if a given binary tree is BST or not
+//Program to check if a given binary tree is BST or not 
 package isbst;
 
 class Node
