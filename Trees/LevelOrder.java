@@ -1,4 +1,4 @@
-// Recursive level order traversal progam for trees 
+// Recursive level order traversal program for trees 
 //which has the following functions
 //1) Height of tree 
 //2)Level order traversal
