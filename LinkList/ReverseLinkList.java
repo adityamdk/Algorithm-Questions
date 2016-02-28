@@ -1,4 +1,7 @@
-//Reversing a linklist iteratively and recursively
+/*Program to 
+a)Reversing a linklist iteratively 
+b)Reversing a linklist recursively*/
+
 package reverselinklist;
 
 class Node
