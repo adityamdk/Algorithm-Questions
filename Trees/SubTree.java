@@ -40,7 +40,7 @@ public class SubTree {
         
         if(T==null || S==null)
         {
-            return true;
+            return false;
         }
 
         return((T.data ==S.data)&&(isIdentical(T.right,S.right))&&(isIdentical(T.left,S.left)));
