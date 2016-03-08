@@ -24,19 +24,6 @@ public class FindingFilesInDirectory {
         Files.walkFileTree(fileDirectory,finder);
         System.out.println("************************************************************"); 
 	ArrayList<Path> foundFiles = finder.pathsFound;
-		
-	/*if (foundFiles.size() > 0) 
-        {
-            for (Path path : foundFiles)
-            {
-                System.out.println("Path to file is"+path.toRealPath(LinkOption.NOFOLLOW_LINKS));
-            }
-	}
-	else 
-        {
-            System.out.println("No files were found!");
-	}*/
-        
     }
     
 }
