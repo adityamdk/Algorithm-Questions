@@ -17,11 +17,13 @@ public class FileFinder extends SimpleFileVisitor<Path> {
 private PathMatcher matcher;
 public String word = "";
 public ArrayList<Path> pathsFound = new ArrayList<>();
-
+public ArrayList<String> FinalOutput = new ArrayList<>();
 public FileFinder(String pattern,String words)
 {
+    
     matcher = FileSystems.getDefault().getPathMatcher("glob:" + pattern);   
     word = words;
+   // System.out.println("given pattern is "+word);
 }
 	
 @Override
@@ -29,23 +31,23 @@ public FileFinder(String pattern,String words)
 			throws IOException {
 		Path name = file.getFileName();
                 String fileName = file.normalize().toString();
-               
+               String line = "";
 		System.out.println("Examining " + name);
-		if (matcher.matches(name)) {
-			pathsFound.add(file);
-                        
-		}
-                try
+		try
                 {    
-                    Scanner sc = new Scanner(new BufferedReader(new FileReader(fileName)));
-                    while(sc.hasNext())
-                    {
-                        String token = sc.next();
-                        if(token.equalsIgnoreCase(word))
-                        {
-                            System.out.println("Word Found in "+fileName); 
-                        }
-                    }
+                    BufferedReader br = new BufferedReader(new FileReader(fileName));
+                    Scanner sc = new Scanner(br);
+                    
+                    //to compare for lines
+                    while ((line = br.readLine()) != null) {
+                        
+				if(line.toLowerCase().contains(word.toLowerCase()))
+                                {
+                                    FinalOutput.add(fileName);
+                                }
+			}
+                    
+                    
                 }
                 catch(FileNotFoundException e)
                 {
