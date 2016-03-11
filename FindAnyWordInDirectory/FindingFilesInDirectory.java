@@ -1,7 +1,8 @@
-//Program to find any word in a given directory 
+//Program to find any string in a given directory 
 package findingfilesindirectory;
 
 import java.io.IOException;
+import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;

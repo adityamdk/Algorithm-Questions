@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.AccessDeniedException;
 import java.nio.file.FileSystems;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Path;
@@ -49,6 +50,11 @@ public FileFinder(String pattern,String words)
                     
                     
                 }
+                catch( java.nio.file.AccessDeniedException  e)
+                {
+                   System.out.println("inside catch"); 
+                    e.printStackTrace();
+                }
                 catch(FileNotFoundException e)
                 {
                     System.out.println("inside catch"); 
@@ -57,4 +63,12 @@ public FileFinder(String pattern,String words)
                 
 		return FileVisitResult.CONTINUE;
 	}	
+    
+	@Override
+	public FileVisitResult visitFileFailed(Path file, IOException exc)
+			throws IOException {
+		System.err.println(exc.getMessage());
+		return FileVisitResult.CONTINUE;
+	}
+
 }
